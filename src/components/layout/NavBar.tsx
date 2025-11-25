@@ -16,7 +16,7 @@ function NavBar() {
     <>
       <div className="backdrop-blur-lg border-b border py-2 px-6">
         <div className="flex flex-1 justify-between items-center">
-          <h1 className="font-semibold text-xl">IMaSys</h1>
+          <h1 className="font-semibold text-xl">ABFI Farm Management</h1>
           <div className="flex items-center gap-2">
             <ModeToggle />
             <Avatar>

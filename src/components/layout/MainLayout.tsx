@@ -5,21 +5,25 @@ import NavBar from "./NavBar";
 
 function MainLayout() {
   return (
-    <>
-      <div className="flex flex-col h-screen">
-        <div className="sticky top-0 z-100">
-          <NavBar />
-        </div>
-        <div className="flex flex-1 overflow-hidden">
-          <div className="block z-50 sm:p-2">
-            <SideBar />
-          </div>
-          <div className="lg:ml-16 sm:ml-16 flex-1 sm:py-2 overflow-y-auto">
-            <Outlet />
-          </div>
-        </div>
+    <div className="flex flex-col h-screen">
+      {/* NavBar - Fixed at top */}
+      <div className="sticky top-0 z-50">
+        <NavBar />
       </div>
-    </>
+
+      {/* Main content area with sidebar */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar - Fixed width */}
+        <aside className="w-16 flex-shrink-0 z-40">
+          <SideBar />
+        </aside>
+
+        {/* Main content - Takes remaining space */}
+        <main className="flex-1 overflow-y-auto p-0">
+          <Outlet />
+        </main>
+      </div>
+    </div>
   );
 }
 
