@@ -129,6 +129,7 @@
     position: fixed;
   }
 
+  /* Update the navbar-nav to handle dynamic height */
   .navbar-nav {
     list-style: none;
     padding: 0;
@@ -137,19 +138,41 @@
     flex-direction: column;
     align-items: center;
     flex: 1;
-    justify-content: center; /* Ensures centering */
-    gap: 5px;
-    height: 100%;
+    height: auto; /* Allow natural height */
+    min-height: 0; /* Important for flex children */
   }
 
   .nav-item {
     width: 100%;
-    height: 43px;
+    /* Remove this: height: 43px; */
+    min-height: 43px; /* Use min-height instead */
+    margin-bottom: 4px; /* Add spacing between items */
   }
 
-  .nav-item:last-child {
-    margin-top: auto;
+  /* Smooth transitions for dropdown */
+  .sidebar .link-text {
+    transition: opacity 0.2s ease;
   }
+
+  /* Ensure proper spacing for nested items */
+  .ml-4 {
+    margin-left: 1rem;
+    position: relative; /* Change from absolute if needed */
+  }
+
+  .pl-8 {
+    padding-left: 2rem;
+  }
+
+  /* Add smooth transitions for dropdown */
+  .collapsible-content {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  /* .nav-item:last-child {
+    margin-top: auto;
+  } */
 
   .nav-link {
     display: flex;

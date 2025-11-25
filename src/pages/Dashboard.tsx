@@ -1,9 +1,9 @@
 // src/pages/Dashboard.tsx
-import React from "react";
+// import React from "react";
 import StatCard from "../components/dashboard/StatCard";
 // import RecentActivity from "../components/dashboard/RecentActivity";
 // import QuickActions from "../components/dashboard/QuickActions";
-import WeatherWidget from "../components/dashboard/WeatherWidget";
+// import WeatherWidget from "../components/dashboard/WeatherWidget";
 import { Sprout, Tractor, Users, DollarSign } from "lucide-react";
 
 function Dashboard() {
