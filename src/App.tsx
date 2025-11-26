@@ -9,8 +9,9 @@ import GrowingDefects from "./pages/GrowingDefects";
 import FarmHandling from "./pages/FarmHandling";
 import ProcessingDefects from "./pages/ProcessingDefects";
 import Reports from "./pages/Reports";
-import Settings from "./pages/Settings";
+import Settings from "./pages/user/Settings";
 import LoginPage from "./pages/login/LoginPage";
+import Profile from "./pages/user/Profile";
 
 function App() {
   return (
@@ -20,18 +21,27 @@ function App() {
           <Routes>
             {/* Login Route */}
             <Route path="/login" element={<LoginPage />} />
-            
+
             {/* Main App Routes */}
             <Route path="/" element={<MainLayout />}>
-              <Route index element={<Navigate to="/dashboard" replace />} />
+              <Route index element={<Navigate to="/login" replace />} />
+
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="production-overview" element={<ProductionOverview />} />
+              <Route
+                path="production-overview"
+                element={<ProductionOverview />}
+              />
               <Route path="defect-analysis" element={<DefectAnalysis />} />
               <Route path="growing-defects" element={<GrowingDefects />} />
               <Route path="farm-handling" element={<FarmHandling />} />
-              <Route path="processing-defects" element={<ProcessingDefects />} />
+              <Route
+                path="processing-defects"
+                element={<ProcessingDefects />}
+              />
               <Route path="reports" element={<Reports />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
             </Route>
 
             {/* Redirect root to login */}
